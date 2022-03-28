@@ -23,7 +23,7 @@ public class OrdenMaestra {
     String riesgo;
     int idCalendario;
     int esCritica;
-    int idOTPMaestra;
-    int idTipoOrdenMaestra;
+    String idOTPMaestra;
+    String idTipoOrdenMaestra;
 
 }

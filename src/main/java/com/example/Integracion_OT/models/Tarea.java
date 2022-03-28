@@ -22,7 +22,7 @@ public class Tarea {
     int idOrdenMaestra;
     String idUsuaarioSS;
     int idBovedaPass;
-    int idTipoTrabajo;
+    String idTipoTrabajo;
     int idSubtipoTrabajo;
     int idAfectacion;
     int idAfectacionCarrier;
@@ -33,11 +33,11 @@ public class Tarea {
     int idFirmaCCR;
     int idFirmaCPD;
     int idFirmaROP;
-    int idCPD;
+    String idCPD;
     int ventana;
-    int idOTPTarea;
+    String idOTPTarea;
     String folioGUIO;
-    int idCTLProyecto;
+    String idCTLProyecto;
     int reprogramada;
     int urgente;
 

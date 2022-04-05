@@ -1,0 +1,29 @@
+package com.everis.adapters.model.symphony.v6.graphql;
+
+
+public enum PropertyKindTO {
+
+    string("string"),
+    Int("int"),
+    bool("bool"),
+    Float("float"),
+    date("date"),
+    Enum("enum"),
+    range("range"),
+    email("email"),
+    gps_location("gps_location"),
+    datetime_local("datetime_local"),
+    node("node");
+
+    private final String graphqlName;
+
+    PropertyKindTO(String graphqlName) {
+        this.graphqlName = graphqlName;
+    }
+
+    @Override
+    public String toString() {
+        return this.graphqlName;
+    }
+
+}

@@ -1,0 +1,62 @@
+{
+  "groups": [
+    {
+      "name": "",
+      "type": "com.example.Integracion_OT.configuration.YMLConfig",
+      "sourceType": "com.example.Integracion_OT.configuration.YMLConfig"
+    },
+    {
+      "name": "minio",
+      "type": "com.example.Integracion_OT.configuration.minio.MinIOProperties",
+      "sourceType": "com.example.Integracion_OT.configuration.minio.MinIOProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "auth-passwd",
+      "type": "java.lang.String",
+      "sourceType": "com.example.Integracion_OT.configuration.YMLConfig"
+    },
+    {
+      "name": "auth-user",
+      "type": "java.lang.String",
+      "sourceType": "com.example.Integracion_OT.configuration.YMLConfig"
+    },
+    {
+      "name": "minio.access-key",
+      "type": "java.lang.String",
+      "sourceType": "com.example.Integracion_OT.configuration.minio.MinIOProperties"
+    },
+    {
+      "name": "minio.bucket",
+      "type": "java.lang.String",
+      "sourceType": "com.example.Integracion_OT.configuration.minio.MinIOProperties"
+    },
+    {
+      "name": "minio.secret-key",
+      "type": "java.lang.String",
+      "sourceType": "com.example.Integracion_OT.configuration.minio.MinIOProperties"
+    },
+    {
+      "name": "minio.subdir",
+      "type": "java.lang.String",
+      "sourceType": "com.example.Integracion_OT.configuration.minio.MinIOProperties"
+    },
+    {
+      "name": "minio.unsafe-s-s-l",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.example.Integracion_OT.configuration.minio.MinIOProperties"
+    },
+    {
+      "name": "minio.url",
+      "type": "java.lang.String",
+      "sourceType": "com.example.Integracion_OT.configuration.minio.MinIOProperties"
+    },
+    {
+      "name": "url-facebook-graph-q-l",
+      "type": "java.lang.String",
+      "sourceType": "com.example.Integracion_OT.configuration.YMLConfig"
+    }
+  ],
+  "hints": []
+}

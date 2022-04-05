@@ -1,0 +1,25 @@
+package com.everis.adapters.model.symphony.v6.graphql;
+
+
+public enum CheckListItemTypeTO {
+
+    simple("simple"),
+    string("string"),
+    Enum("enum"),
+    files("files"),
+    yes_no("yes_no"),
+    cell_scan("cell_scan"),
+    wifi_scan("wifi_scan");
+
+    private final String graphqlName;
+
+    CheckListItemTypeTO(String graphqlName) {
+        this.graphqlName = graphqlName;
+    }
+
+    @Override
+    public String toString() {
+        return this.graphqlName;
+    }
+
+}

@@ -18,7 +18,7 @@ public class OrdenMaestra {
     private String Objetivo;
     private String fechaCreada;
     private int idAutor;
-    private int idPryecto;
+    private int idProyecto;
     private int idEstatusMaestra;
     private String riesgo;
     private int idCalendario;

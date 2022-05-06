@@ -15,10 +15,10 @@ public class OrdenMaestra {
     private String titulo;
     private String fechaObjetivo;
     private String justificacionTecnica;
-    private String Objetivo;
+    private String objetivo;
     private String fechaCreada;
     private int idAutor;
-    private int idPryecto;
+    private int idProyecto;
     private int idEstatusMaestra;
     private String riesgo;
     private int idCalendario;

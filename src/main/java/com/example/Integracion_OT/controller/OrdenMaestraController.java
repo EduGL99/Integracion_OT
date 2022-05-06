@@ -1,11 +1,12 @@
 package com.example.Integracion_OT.controller;
 
+import com.example.Integracion_OT.model.tmfxxx.WorkTicket;
 import com.example.Integracion_OT.models.OrdenMaestra;
+import com.google.gson.Gson;
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
-import org.springframework.boot.configurationprocessor.json.JSONArray;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -22,17 +23,26 @@ import static com.example.Integracion_OT.models.GetUnsafeOkHttpClient.getUnsafeO
 @RequestMapping("/maestra")
 public class OrdenMaestraController {
 
+    // envio de valores a ws
     @RequestMapping(value = "prueba", method = RequestMethod.GET)
-    public ArrayList setOrdenMaestra(){
+    public String setOrdenMaestra(WorkTicket workTicket) {
         OrdenMaestra maestra=new OrdenMaestra();
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd-MM-yy HH:mm:ss");
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss");
 
-        maestra.setObjetivo("No aplica");
+        String titulo = workTicket.getCharacteristic().get(0).getValue();
+        String fecha = workTicket.getCharacteristic().get(3).getValue();
+        String justificacion = workTicket.getCharacteristic().get(4).getValue();
+        String riesgo = workTicket.getCharacteristic().get(5).getValue();
+
+        maestra.setTitulo(titulo);
+        maestra.setFechaObjetivo(fecha);
+        maestra.setJustificacionTecnica(justificacion);
+        maestra.setObjetivo(justificacion);
+        maestra.setRiesgo(riesgo);
         maestra.setFechaCreada(dtf.format(LocalDateTime.now())); // fecha cuando se ejecuta el evento
         maestra.setIdAutor(243);
-        maestra.setIdPryecto(3);
+        maestra.setIdProyecto(9); // se mandara el id_proyecto que equivale a symphony
         maestra.setIdEstatusMaestra(1);
-        maestra.setRiesgo("No aplica");
         maestra.setIdCalendario(0);
         maestra.setEsCritica(5);
         maestra.setIdOTPMaestra(null);
@@ -40,25 +50,43 @@ public class OrdenMaestraController {
 
         ArrayList arrayListMaestra = new ArrayList();
         arrayListMaestra.add(maestra);
-        return arrayListMaestra;
+        //return arrayListMaestra;
+        String OMJson = new Gson().toJson(arrayListMaestra);
+        return  OMJson;
+    }
+
+    @RequestMapping(value = "om", method = RequestMethod.GET)
+    public ArrayList OM(){
+//        OrdenMaestraController omController = new OrdenMaestraController();
+//        omController.setOrdenMaestra(new WorkTicket());
+        setOrdenMaestra(null);
+
+        ArrayList OM = new ArrayList();
+        //OM.add(omController);
+        OM.add(setOrdenMaestra(null));
+        return OM;
     }
 
     @RequestMapping(value = "crear_orden_maestra", method = RequestMethod.POST)
     public ArrayList crearOrdenMaestra(@RequestBody OrdenMaestra ordenMaestra){
-        setOrdenMaestra();
-        ordenMaestra.getIdOrdenMaestra();
+
         ordenMaestra.getTitulo();
         ordenMaestra.getFechaObjetivo();
         ordenMaestra.getJustificacionTecnica();
+        ordenMaestra.getObjetivo();
+        ordenMaestra.getRiesgo();
+        ordenMaestra.getFechaCreada();
+        ordenMaestra.getIdAutor();
+        ordenMaestra.getIdProyecto();
+        ordenMaestra.getIdEstatusMaestra();
+        ordenMaestra.getIdCalendario();
+        ordenMaestra.getEsCritica();
+        ordenMaestra.getIdOTPMaestra();
+        ordenMaestra.getIdTipoOrdenMaestra();
 
         ArrayList crearOM=new ArrayList();
-        crearOM.add(setOrdenMaestra());
         crearOM.add(ordenMaestra);
         return crearOM;
-    }
-
-    public void modificarOrdenMaestra(){
-
     }
 
     public String createProject(String name, String description, String type, String priority) {

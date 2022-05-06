@@ -34,11 +34,11 @@ public class Tarea {
     private int idFirmaCPD;
     private int idFirmaROP;
     private String idCPD;
-    private int ventana;
+    private String ventana;
     private String idOTPTarea;
     private String folioGUIO;
     private String idCTLProyecto;
     private int reprogramada;
     private int urgente;
-
+    private String idElemento;
 }

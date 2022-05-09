@@ -11,6 +11,12 @@ public class WorkTicketController {
         String name = workTicket.getName();
         List characteristic = workTicket.getCharacteristic();
         List relatedEntity = workTicket.getRelatedEntity();
+        
+        OrdenMaestraController ordenMaestraController=new OrdenMaestraController();
+        ordenMaestraController.setOrdenMaestra(workTicket);
+
+        TareaController tareaController=new TareaController();
+        tareaController.setTarea(workTicket);
 
     }
 
